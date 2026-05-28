@@ -1,4 +1,4 @@
-# Убиваем все старые процессы перед запуском
+"""бот егэ русский. v. a1.0"""
 import requests
 import time
 import os
@@ -14,6 +14,7 @@ from datetime import date, datetime
 TOKEN = "8652125406:AAHYxFtCGzkB_HnFyXs_YBvBlKMIgaxHIrc"
 
 
+# Убиваем все старые процессы перед запуском
 print("Очистка старых сессий бота...")
 for i in range(5):
     try:
@@ -157,7 +158,7 @@ async def start(update, context):
     ]
     reply_markup = InlineKeyboardMarkup(keyboard)
     await update.effective_message.reply_text(
-        "Привет! Это бот для подготовки к ЕГЭ по русскому языку. Выбери, чем займешься сегодня 👇",
+        "Привет! Это бот для подготовки к ЕГЭ по русскому языку. Выбери, чем займешься сегодня 👇 или напиши 'Сколько?'🗓, чтобы получить заряд мотивации",
         reply_markup=reply_markup
     )
 
