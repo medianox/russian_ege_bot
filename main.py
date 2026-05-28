@@ -11,7 +11,7 @@ import re
 from datetime import date, datetime
 
 
-TOKEN = "8652125406:AAHYxFtCGzkB_HnFyXs_YBvBlKMIgaxHIrc"
+TOKEN = "TOKEN"
 
 
 # Убиваем все старые процессы перед запуском
