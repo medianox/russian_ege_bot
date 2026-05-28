@@ -11,7 +11,7 @@ import re
 from datetime import date, datetime
 
 
-TOKEN = "СЕКРЕТНО"
+TOKEN = "8652125406:AAHYxFtCGzkB_HnFyXs_YBvBlKMIgaxHIrc"
 
 
 print("Очистка старых сессий бота...")
@@ -29,9 +29,6 @@ time.sleep(2)
 os.system("pip install python-telegram-bot nest_asyncio -q")
 
 nest_asyncio.apply()
-
-print(f"requests version: {requests.__version__}")
-print(f"bs4 version: {bs4.__version__}")
 
 def escape_markdown(text):
     return text.replace('*', '').replace('_', '').replace('`', '')
@@ -191,7 +188,7 @@ async def get_filtered_tasks(uid, task_list):
     solved = user_solved_tasks[uid]
     return [t for t in task_list if t.get('id', t['text']) not in solved]
 
-async def send_random_task(update_or_query, context, set_name_display=None):
+async def send_random_task(update_or_query, context, display_name=None):
     uid = update_or_query.effective_user.id
     chat_id = update_or_query.effective_chat.id
 
@@ -234,8 +231,8 @@ async def send_random_task(update_or_query, context, set_name_display=None):
         user_solved_tasks[uid] = set()
     user_solved_tasks[uid].add(task_id)
 
-    prefix = f"Выбран тип {set_name_display}.\n\n" if set_name_display else ""
-
+    #prefix = f"Выбран тип {display_name}.\n\n" if display_name else ""
+    prefix = ""
     # Определяем, показывать кнопки или текстовый ввод
     if t['answer'] in ('Слитно', 'Раздельно'):
         user_current_task_type[uid] = 'buttons'
