@@ -2,8 +2,17 @@
 import requests
 import time
 import os
+import json
+import random
+import nest_asyncio
+from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, CallbackQueryHandler
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+import re
+from datetime import date, datetime
 
-TOKEN = "8652125406:AAHYxFtCGzkB_HnFyXs_YBvBlKMIgaxHIrc"
+
+TOKEN = "СЕКРЕТНО"
+
 
 print("Очистка старых сессий бота...")
 for i in range(5):
@@ -19,17 +28,7 @@ time.sleep(2)
 
 os.system("pip install python-telegram-bot nest_asyncio -q")
 
-import json
-import random
-import nest_asyncio
-from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, CallbackQueryHandler
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
-import re
-from datetime import date, datetime
-
 nest_asyncio.apply()
-
-TOKEN = "[СЕКРЕТНО]"
 
 print(f"requests version: {requests.__version__}")
 print(f"bs4 version: {bs4.__version__}")
