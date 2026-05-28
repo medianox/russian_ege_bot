@@ -177,7 +177,7 @@ async def show_task_types(update, context):
     )
 
 async def skolko_command(update, context):
-    ege = date(2026, 6, 24)
+    ege = date(2026, 6, 4)
     now = datetime.now()
     n = (ege - now.date()).days
     day_word = get_correct_word_form(n, "день", "дня", "дней")
